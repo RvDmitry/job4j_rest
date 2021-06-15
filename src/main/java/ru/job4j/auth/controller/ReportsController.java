@@ -22,12 +22,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/report")
 public class ReportsController {
-    @Autowired
-    private RestTemplate rest;
 
     private static final String API = "http://localhost:8080/person/";
 
     private static final String API_ID = "http://localhost:8080/person/{id}";
+
+    @Autowired
+    private RestTemplate rest;
 
     @GetMapping("/")
     public List<Report> findAll() {
